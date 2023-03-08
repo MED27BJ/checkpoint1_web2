@@ -1,0 +1,48 @@
+ALGORITHM sum_distinct_element
+VAR
+   a1:ARRAY_OF INTEGER [a];
+   a2:ARRAY_OF INTEGER [b];
+   i,j,k,a,b:INTEGER;
+   sum:=0;
+BEGIN
+   Write ("the length of the first element");
+   Read(a);
+
+   Write("Enter the first element");
+   Read(a1);
+   Write ("the length of the second element");
+   Read(b);
+   Write("Enter the second element");
+   Read(a2);
+    
+ FOR i FROM 0 TO a1.length-1 STEP 1 DO
+     j:=-1;
+  REPEAT
+
+   j:j+1;
+
+UNTIL ((j=a2.length-1)OR(a2[j]=a1[i]))
+IF ((a2[j]<>a1[i])) THEN
+    sum:=sum+a1[i];
+
+END_IF
+END_FOR
+ FOR j FROM 0 TO a2.length-1 STEP 1 DO
+     i:=-1;
+  REPEAT
+
+   i:i+1;
+
+UNTIL ((i=a1.length-1)OR(a1[i]=a2[j]))
+IF ((a1[i]<>a2[j])) THEN
+
+    sum:=sum+a2[j];
+
+END_IF
+END_FOR
+
+    Write('The sum of the distinct element for ',a1,' and ',a2,' is: ',sum);
+   
+    
+
+END

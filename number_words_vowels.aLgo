@@ -1,0 +1,35 @@
+ALGORITHM number_words_vowels
+VAR
+    c:CHAR;
+    s:STRING;
+    i,j,k:INTEGER;
+    i:=0;
+    j:=0;
+    k:=0;
+    s:='';
+BEGIN
+
+   Write("Enter your sentence please");
+   
+
+    REPEAT 
+    Read(c);
+        s:=s+c;
+    UNTIL (c='.')
+    s:=ToUpper(s);
+
+ FOR i FROM 0 TO s.length-1 STEP 1 DO
+IF (s[i]=' ') THEN
+    j:=j+1;
+ELSE
+IF ((s[i])='A' or (s[i])='E'  or (s[i])='I' or (s[i])='O' or (s[i])='U' or (s[i])='Y') THEN
+    k:=k+1;
+END_IF
+END_IF
+END_FOR
+    Write('The number of words in the sentence is: ',j+1);// we add the last word that end with dot
+   
+    Write('The number of vowels in the sentence is : ',K);
+    
+
+END
