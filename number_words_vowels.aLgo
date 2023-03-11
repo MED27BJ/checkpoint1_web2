@@ -1,7 +1,7 @@
 ALGORITHM number_words_vowels
 VAR
     c:CHAR;
-    s:STRING;
+    s:STRING[100];
     i,j,k:INTEGER;
     i:=0;
     j:=0;
